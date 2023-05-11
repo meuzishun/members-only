@@ -1,5 +1,5 @@
 const newMessageForm = (req, res) => {
-  res.send('New message');
+  res.render('newMessageForm');
 };
 
 const newMessage = (req, res) => {};
