@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon app.js",
+    "watch-sass": "sass --watch public/stylesheets/sass/style.scss public/stylesheets/style.css",
+    "devStart": "npm run watch-sass && npm run nodemon"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +19,7 @@
     "mongoose": "^7.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "sass": "^1.62.1"
   }
 }
