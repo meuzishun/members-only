@@ -8,7 +8,7 @@ const {
 
 /* GET test */
 router.get('/', (req, res) => {
-  res.send('Home');
+  res.render('index');
 });
 
 router.route('/sign-up').get(signUpForm).post(signUpUser);
