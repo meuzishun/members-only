@@ -1,1 +1,60 @@
-<h1>Sign Up Form! Come write yo stuff!</h1>
+<form class="form sign-up-form" action="/sign-up" method="post">
+  <div class="input-container">
+    <h2>Sign Up to Create a Message!</h2>
+    <div class="inputs">
+      <div>
+        <label for="first-name">first name</label>
+        <input type="text" id="first-name" name="first-name" required />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="last-name">last name</label>
+        <input type="text" id="last-name" name="last-name" required />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="password"
+          >password
+          <span class="instructions">(minimum 8 characters)</span></label
+        >
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          minlength="8"
+        />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="confirm-password">confirm password</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          required
+        />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="secret-password">secret password <span class="instructions">(optional)</span></label>
+        <input
+          type="password"
+          id="secret-password"
+          name="secret-password"
+        />
+        <p class="help">test</p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="submission-container">
+    <button type="submit">create account</button>
+    <p>Already have an account? <a href="/sign-in">Sign In</a></p>
+  </div>
+</form>

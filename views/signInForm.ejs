@@ -1,1 +1,28 @@
-<h1>Sign In Form... what do ya say?</h1>
+<form class="form sign-in-form" action="/sign-in" method="post">
+  <div class="input-container">
+    <h2>Sign In to Create a Message!</h2>
+    <div class="inputs">
+      <div>
+        <label for="email">email</label>
+        <input type="email" id="email" name="email" required />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="password">password </label>
+        <input type="password" id="password" name="password" required />
+        <p class="help">test</p>
+      </div>
+      <div>
+        <label for="secret-password"
+          >secret password <span class="instructions">(optional)</span></label
+        >
+        <input type="password" id="secret-password" name="secret-password" />
+        <p class="help">test</p>
+      </div>
+    </div>
+  </div>
+  <div class="submission-container">
+    <button type="submit">Sign In</button>
+    <p>Don't have an account? <a href="/sign-up">Sign Up</a></p>
+  </div>
+</form>
