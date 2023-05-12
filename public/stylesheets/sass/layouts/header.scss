@@ -1,0 +1,68 @@
+@use '../abstracts' as *;
+
+.header {
+  display: grid;
+  grid-template-areas:
+    'welcome welcome'
+    'id nav';
+  grid-gap: 2rem;
+  padding: 2rem;
+
+  background-color: $blue-bg;
+  color: $white-bg;
+
+  .welcome {
+    grid-area: welcome;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    h1 {
+      font-size: 1.75rem;
+      text-transform: none;
+      text-align: center;
+
+      span {
+        font-size: 2.25rem;
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  .greeting {
+    p {
+      grid-area: id;
+      font-size: 1.25rem;
+    }
+  }
+
+  .navigation {
+    grid-area: nav;
+    justify-self: end;
+
+    ul {
+      display: flex;
+      gap: 1rem;
+      text-transform: capitalize;
+      font-size: 1.25rem;
+
+      a {
+        padding: 0.15rem;
+        border-bottom: 0.1rem solid #00000000;
+        text-decoration: none;
+
+        &:active,
+        &:visited {
+          color: inherit;
+        }
+
+        &:hover {
+          cursor: pointer;
+          border-bottom-color: $white-bg;
+        }
+      }
+    }
+  }
+}

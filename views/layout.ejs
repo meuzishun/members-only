@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Members Only Message Board</title>
+    <title>Members-Only Message Board</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="welcome">
+        <h1>Welcome to the <span>Members-Only Message Board</span></h1>
+      </div>
+      <div class="greeting">
+        <p>Hi there, <span class="user-name">Morgan Oakley</span></p>
+      </div>
+      <nav class="navigation">
+        <ul>
+          <!-- <li><a href="/">home</a></li> -->
+          <!-- <li><a href="/sign-up">sign up</a></li> -->
+          <!-- <li><a href="/sign-in">sign in</a></li> -->
+          <li><a href="/new-message">new message</a></li>
+          <li><a href="">log out</a></li>
+        </ul>
+      </nav>
+    </header>
     <main class="page-content"><%- body %></main>
   </body>
 </html>
