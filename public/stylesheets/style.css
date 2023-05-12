@@ -133,4 +133,56 @@ table {
   border-spacing: 0;
 }
 
+html {
+  font-size: 16px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  text-transform: capitalize;
+}
+
+.messages-section .messages-heading {
+  font-size: 1.75rem;
+  padding: 1rem;
+}
+.messages-section .messages-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+.messages-section .messages-container .message {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  align-content: space-between;
+  gap: 1rem;
+  padding: 1.75rem 1.25rem 1.5rem;
+  border-radius: 0.5rem;
+  border-left: 8px solid #f2c355;
+  background-color: #fff;
+  box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+}
+.messages-section .messages-container .message .message-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+.messages-section .messages-container .message .message-data p {
+  font-size: 0.8rem;
+}
+
+body {
+  background-color: #e2e8f0;
+}
+body .page-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 /*# sourceMappingURL=style.css.map */
