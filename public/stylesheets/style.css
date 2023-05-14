@@ -147,6 +147,24 @@ h5 {
   text-transform: capitalize;
 }
 
+button {
+  border: none;
+  color: white;
+  background-color: #000;
+  cursor: pointer;
+  color: #eee;
+  padding: 1rem 3rem;
+  text-transform: capitalize;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.3rem #999;
+  transition: color 0.15s ease-in-out;
+}
+button:hover {
+  color: #fff;
+}
+
 input,
 textarea {
   font-size: 1.25rem;
@@ -280,19 +298,7 @@ textarea {
   align-items: center;
 }
 .form .submission-container button {
-  color: #eee;
   background-color: #5d4157;
-  padding: 1rem 3rem;
-  text-transform: capitalize;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.3rem;
-  box-shadow: 0.1rem 0.1rem 0.3rem #999;
-  transition: color 0.15s ease-in-out;
-}
-.form .submission-container button:hover {
-  cursor: pointer;
-  color: #fff;
 }
 .form .submission-container p {
   margin-top: 2rem;
@@ -320,6 +326,7 @@ textarea {
 }
 .messages-section .messages-container .message {
   display: grid;
+  grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, min-content);
   align-content: space-between;
   gap: 1rem;
@@ -329,11 +336,28 @@ textarea {
   background-color: #fff;
   box-shadow: 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 }
+.messages-section .messages-container .message .message-content {
+  grid-column: 1/3;
+}
+.messages-section .messages-container .message .delete-message-button {
+  background-color: rgb(225, 0, 0);
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  grid-row: 2/3;
+  grid-column: 1/2;
+  justify-self: start;
+  display: none;
+}
+.messages-section .messages-container .message:hover .delete-message-button {
+  display: block;
+}
 .messages-section .messages-container .message .message-data {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.25rem;
+  grid-row: 2/3;
+  grid-column: 2/3;
 }
 .messages-section .messages-container .message .message-data p {
   font-size: 0.8rem;
