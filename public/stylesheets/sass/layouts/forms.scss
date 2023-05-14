@@ -1,5 +1,4 @@
-.sign-up-form,
-.sign-in-form {
+.form {
   background-color: #fff;
   box-shadow: 0 0.2rem 0.5rem #ddd;
   display: flex;
@@ -38,30 +37,19 @@
           letter-spacing: 0.05;
         }
 
-        input {
-          font-size: 1.25rem;
-          padding: 0.25rem 0.5rem;
-          border: 1px solid #bbb;
-          border-radius: 0.3rem;
-          transition: box-shadow 0.1s ease-in-out;
-
-          &:focus {
-            outline: none;
-            box-shadow: 0.1rem 0.1rem 0.3rem #999;
-          }
-        }
-
         .help {
           color: red;
           font-size: 0.8rem;
           display: none;
           position: absolute;
-          top: 3.2rem;
+          right: calc(-100% + -0.5rem);
+          top: 1.25rem;
           width: 100%;
         }
 
         &.invalid {
-          input {
+          input,
+          textarea {
             background-color: rgb(255, 209, 209);
 
             &:focus {

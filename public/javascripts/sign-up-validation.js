@@ -1,3 +1,18 @@
+const validateInput = function (e) {
+  const elem = e.target;
+  const inputContainer = elem.parentElement;
+  const helpMsg = inputContainer.querySelector('.help');
+  if (elem.checkValidity()) {
+    inputContainer.classList.remove('invalid');
+    helpMsg.textContent = '';
+    elem.removeEventListener('input', validateInput);
+    return;
+  } else {
+    helpMsg.textContent = elem.validationMessage;
+    return;
+  }
+};
+
 const validateForm = function (e) {
   const form = e.target;
   const password = form.querySelector('#password');
@@ -27,20 +42,15 @@ const validateForm = function (e) {
       } else {
         inputContainer.classList.add('invalid');
         helpMsg.textContent = elem.validationMessage;
+        elem.addEventListener('input', validateInput);
         return;
       }
     });
   }
 };
 
-const signUpForm = document.querySelector('.sign-up-form');
-if (signUpForm) {
-  signUpForm.noValidate = true;
-  signUpForm.addEventListener('submit', validateForm);
-}
-
-const signInForm = document.querySelector('.sign-in-form');
-if (signInForm) {
-  signInForm.noValidate = true;
-  signInForm.addEventListener('submit', validateForm);
+const form = document.querySelector('.form');
+if (form) {
+  form.noValidate = true;
+  form.addEventListener('submit', validateForm);
 }

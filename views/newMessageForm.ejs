@@ -1,1 +1,22 @@
-<h1>New Message? Write it here:</h1>
+<form class="form new-message-form" action="/new-message" method="post">
+  <div class="input-container">
+    <h2>Create a Message!</h2>
+    <div class="inputs">
+      <div>
+        <label for="content">content</label>
+        <textarea
+          id="content"
+          name="content"
+          cols="50"
+          rows="10"
+          maxlength="500"
+          required
+        ></textarea>
+        <p class="help">test</p>
+      </div>
+    </div>
+  </div>
+  <div class="submission-container">
+    <button type="submit">Submit</button>
+  </div>
+</form>

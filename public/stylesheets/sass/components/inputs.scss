@@ -1,0 +1,18 @@
+input,
+textarea {
+  font-size: 1.25rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 0.3rem;
+  transition: box-shadow 0.1s ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0.1rem 0.1rem 0.3rem #999;
+  }
+}
+
+textarea {
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
