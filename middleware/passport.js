@@ -3,12 +3,19 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
+const customFields = {
+  usernameField: 'email',
+  passwordField: 'password',
+};
+
 const verifyCallback = async (username, password, done) => {
   try {
-    const user = await User.findOne({ username: username });
+    const user = await User.findOne({ email: username });
     if (!user) {
-      return done(null, false, { message: 'Incorrect username' });
+      console.log('No user');
+      return done(null, false, { message: 'Incorrect email' });
     }
+    console.log(user);
     bcrypt.compare(password, user.password, (err, res) => {
       if (res) {
         return done(null, user);
@@ -21,7 +28,7 @@ const verifyCallback = async (username, password, done) => {
   }
 };
 
-const strategy = new LocalStrategy(verifyCallback);
+const strategy = new LocalStrategy(customFields, verifyCallback);
 
 passport.use(strategy);
 

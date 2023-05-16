@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -13,16 +13,23 @@
       <div class="welcome">
         <h1>Welcome to the <span>Members-Only Message Board</span></h1>
       </div>
+      <% if (user) { %>
       <div class="greeting">
-        <p>Hi there, <span class="user-name">Morgan Oakley</span></p>
+        <p>Hi there, <span class="user-name"><%= user.firstName %></span></p>
       </div>
+      <% } else { %>
+      <div></div>
+      <% } %>
       <nav class="navigation">
         <ul>
           <li><a href="/">home</a></li>
+          <% if (user) { %>
+          <li><a href="/new-message">new message</a></li>
+          <li><a href="/log-out">log out</a></li>
+          <% } else { %>
           <li><a href="/sign-up">sign up</a></li>
           <li><a href="/sign-in">sign in</a></li>
-          <li><a href="/new-message">new message</a></li>
-          <li><a href="">log out</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>

@@ -1,4 +1,6 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
   firstName: {
@@ -9,12 +11,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  hash: {
+  email: {
     type: String,
     required: true,
   },
-  salt: {
-    //? Do we need this if we're using bcrypt?
+  password: {
     type: String,
     required: true,
   },
