@@ -1,19 +1,27 @@
 const router = require('express').Router();
+const Message = require('../models/message');
 const { signUpForm, signUpUser } = require('../controllers/signUpController');
 const { signInForm, signInUser } = require('../controllers/signInController');
 const {
   newMessageForm,
   newMessage,
-} = require('../controllers/newMessageController');
+  deleteMessage,
+} = require('../controllers/messageController');
 
 /* GET test */
-router.get('/', (req, res) => {
-  res.render('index', { user: req.user });
+router.get('/', async (req, res, next) => {
+  try {
+    const messages = await Message.find({}).populate('author');
+    res.render('index', { user: req.user, messages });
+  } catch (err) {
+    return next(err);
+  }
 });
 
 router.route('/sign-up').get(signUpForm).post(signUpUser);
 router.route('/sign-in').get(signInForm).post(signInUser);
 router.route('/new-message').get(newMessageForm).post(newMessage);
+router.post('/delete-message', deleteMessage);
 
 router.get('/log-out', (req, res, next) => {
   req.logout((err) => {

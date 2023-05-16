@@ -1,106 +1,30 @@
 <section class="messages-section">
   <h3 class="messages-heading">messages</h3>
   <div class="messages-container">
+    <% if (messages) { %> <% messages.forEach((message) => { %>
     <article class="message">
       <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus,
-          commodi aliquam ab nemo quibusdam eligendi.
-        </p>
+        <p><%= message.text %></p>
       </div>
       <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
+      <form action="/delete-message" method="post">
+        <input value="<%= message.id %>" type="hidden" name="message-id" />
+        <button type="submit" class="delete-message-button">
+          Delete Message
+        </button>
+      </form>
       <% } %> <% if (user && user.isMember) { %>
       <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
+        <p class="message-author">
+          <%= message.author.firstName %> <%= message.author.lastName %>
+        </p>
+        <p class="message-time">
+          <%= message.timestamp.toDateString() %>, <%=
+          message.timestamp.toLocaleTimeString() %>
+        </p>
       </div>
       <% } %>
     </article>
-    <article class="message">
-      <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-          nulla inventore mollitia magnam praesentium, dicta ipsam, iure sit
-          eligendi atque reiciendis earum libero, numquam ipsa placeat fugit
-          ducimus. Libero, quam!
-        </p>
-      </div>
-      <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
-      <% } %> <% if (user && user.isMember) { %>
-      <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
-      </div>
-      <% } %>
-    </article>
-    <article class="message">
-      <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas at,
-          incidunt minus debitis deleniti culpa.
-        </p>
-      </div>
-      <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
-      <% } %> <% if (user && user.isMember) { %>
-      <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
-      </div>
-      <% } %>
-    </article>
-    <article class="message">
-      <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt minus
-          sit rerum ad obcaecati placeat, doloribus voluptates possimus
-          asperiores adipisci?
-        </p>
-      </div>
-      <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
-      <% } %> <% if (user && user.isMember) { %>
-      <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
-      </div>
-      <% } %>
-    </article>
-    <article class="message">
-      <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-          consectetur facere qui. Reprehenderit voluptatum earum dolorem culpa
-          deserunt? Quibusdam, delectus.
-        </p>
-      </div>
-      <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
-      <% } %> <% if (user && user.isMember) { %>
-      <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
-      </div>
-      <% } %>
-    </article>
-    <article class="message">
-      <div class="message-content">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. In nam, quos
-          doloremque quis soluta nulla perspiciatis fuga. Soluta deleniti quis
-          repudiandae nulla, non sint in.
-        </p>
-      </div>
-      <% if (user && user.isAdmin) { %>
-      <button class="delete-message-button">Delete Message</button>
-      <% } %> <% if (user && user.isMember) { %>
-      <div class="message-data">
-        <p class="message-author">Just some guy</p>
-        <p class="message-time">12:00 PM</p>
-      </div>
-      <% } %>
-    </article>
+    <% }) %> <% } %>
   </div>
 </section>

@@ -11,9 +11,17 @@ const newMessage = async (req, res, next) => {
       text: req.body.content,
       timestamp: new Date(),
     });
-    const result = await message.save();
-    console.log(result);
-    res.render('index', { user: req.user });
+    await message.save();
+    res.redirect('/');
+  } catch (err) {
+    return next(err);
+  }
+};
+
+const deleteMessage = async (req, res, next) => {
+  try {
+    await Message.findByIdAndRemove(req.body['message-id']);
+    res.redirect('/');
   } catch (err) {
     return next(err);
   }
@@ -22,4 +30,5 @@ const newMessage = async (req, res, next) => {
 module.exports = {
   newMessageForm,
   newMessage,
+  deleteMessage,
 };

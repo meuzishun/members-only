@@ -23,8 +23,8 @@ const signUpUser = async (req, res, next) => {
       });
       const result = await user.save();
       console.log(result);
-      // res.redirect('/');
-      res.render('index', { user });
+      res.redirect('/sign-in');
+      // res.render('index', { user });
     } catch (err) {
       return next(err);
     }
