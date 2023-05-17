@@ -253,7 +253,6 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  row-gap: 2rem;
 }
 .form .input-container .inputs div {
   display: flex;
