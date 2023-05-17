@@ -3,7 +3,8 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 
 const signUpForm = (req, res) => {
-  res.render('signUpForm', { user: req.user });
+  console.log(req.session.messages);
+  res.render('signUpForm', { user: req.user, messages: req.session.messages });
 };
 
 const signUpUser = async (req, res, next) => {

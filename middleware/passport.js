@@ -13,14 +13,15 @@ const verifyCallback = async (username, password, done) => {
     const user = await User.findOne({ email: username });
     if (!user) {
       console.log('No user');
-      return done(null, false, { message: 'Incorrect email' });
+      return done(null, false, { message: 'No user exists with that email' });
     }
-    console.log(user);
     bcrypt.compare(password, user.password, (err, res) => {
       if (res) {
         return done(null, user);
       } else {
-        return done(null, false, { message: 'Incorrect password' });
+        return done(null, false, {
+          message: 'Incorrect password, please try again',
+        });
       }
     });
   } catch (err) {

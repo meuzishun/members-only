@@ -1,10 +1,24 @@
 <form class="form sign-in-form" action="/sign-in" method="post">
   <div class="input-container">
+    <% if (messages) { %>
+    <h2><%= messages[messages.length - 1] %></h2>
+    <% } else { %>
     <h2>Sign In to Create a Message!</h2>
+    <% } %>
     <div class="inputs">
       <div>
         <label for="email">email</label>
+        <% if (user) { %>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          value="<%= user.email %>"
+        />
+        <% } else { %>
         <input type="email" id="email" name="email" required />
+        <% } %>
         <p class="help">test</p>
       </div>
       <div>
