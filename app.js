@@ -10,6 +10,7 @@ const indexRouter = require('./routes/index');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 require('./middleware/passport');
+const helmet = require('helmet');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use(passport.session());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(helmet());
 app.use(expressLayouts);
 app.use(express.static(path.join(__dirname, 'public')));
 
