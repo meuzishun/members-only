@@ -243,9 +243,6 @@ textarea {
   flex-direction: column;
   align-items: center;
 }
-.form .input-container {
-  width: 350px;
-}
 .form .input-container h2 {
   font-size: 1.5rem;
   margin: 2rem 0;
@@ -369,6 +366,53 @@ body {
   background-color: #e2e8f0;
   max-width: 1100px;
   margin: 0 auto;
+}
+.error,
+.sign-in-fail {
+  padding: 4rem 0;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.5rem #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error h2,
+.sign-in-fail h2 {
+  font-size: 1.5rem;
+}
+.error .error-data,
+.sign-in-fail .error-data {
+  margin-top: 2rem;
+  width: 400px;
+  overflow-x: scroll;
+}
+.error .error-data pre,
+.sign-in-fail .error-data pre {
+  font-size: 0.8rem;
+}
+.error .links,
+.sign-in-fail .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.error .links p,
+.sign-in-fail .links p {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+.error .links p a,
+.sign-in-fail .links p a {
+  color: #5d4157;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0);
+  padding: 0.15rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.error .links p a:hover,
+.sign-in-fail .links p a:hover {
+  cursor: pointer;
+  border-bottom-color: #5d4157;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,7 +6,7 @@ const signInForm = (req, res) => {
 
 const signInUser = [
   passport.authenticate('local', {
-    failureRedirect: '/sign-in',
+    failureRedirect: '/sign-in-fail',
     failureMessage: true,
     successRedirect: '/new-message',
   }),
@@ -15,7 +15,12 @@ const signInUser = [
   },
 ];
 
+const signInFail = (req, res) => {
+  res.render('signInFail', { user: req.user, messages: req.session.messages });
+};
+
 module.exports = {
   signInForm,
   signInUser,
+  signInFail,
 };

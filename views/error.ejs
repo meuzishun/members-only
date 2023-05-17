@@ -1,0 +1,12 @@
+<section class="error">
+  <h2>Oops, we got an error...</h2>
+  <div class="links">
+    <p><a href="javascript:history.back()">Back</a></p>
+    <p><a href="/">Home</a></p>
+  </div>
+  <div class="error-data">
+    <p class="error-message"><%= message %></p>
+    <p class="error-status"><%= error.status %></p>
+    <pre class="error-stack"><%= error.stack %></pre>
+  </div>
+</section>

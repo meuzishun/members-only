@@ -1,7 +1,11 @@
 const router = require('express').Router();
 const Message = require('../models/message');
 const { signUpForm, signUpUser } = require('../controllers/signUpController');
-const { signInForm, signInUser } = require('../controllers/signInController');
+const {
+  signInForm,
+  signInUser,
+  signInFail,
+} = require('../controllers/signInController');
 const {
   newMessageForm,
   newMessage,
@@ -20,6 +24,7 @@ router.get('/', async (req, res, next) => {
 
 router.route('/sign-up').get(signUpForm).post(signUpUser);
 router.route('/sign-in').get(signInForm).post(signInUser);
+router.get('/sign-in-fail', signInFail);
 router.route('/new-message').get(newMessageForm).post(newMessage);
 router.post('/delete-message', deleteMessage);
 

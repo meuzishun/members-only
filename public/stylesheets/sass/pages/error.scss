@@ -1,0 +1,46 @@
+.error,
+.sign-in-fail {
+  padding: 4rem 0;
+  background-color: #fff;
+  box-shadow: 0 0.2rem 0.5rem #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .error-data {
+    margin-top: 2rem;
+    width: 400px;
+    overflow-x: scroll;
+
+    pre {
+      font-size: 0.8rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+
+      a {
+        color: #5d4157;
+        border-bottom: 0.1rem solid #00000000;
+        padding: 0.15rem;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+          cursor: pointer;
+          border-bottom-color: #5d4157ff;
+        }
+      }
+    }
+  }
+}
