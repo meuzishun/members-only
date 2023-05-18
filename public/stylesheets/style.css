@@ -227,6 +227,7 @@ textarea {
   padding: 0.15rem;
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0);
   text-decoration: none;
+  color: #fff;
 }
 .header .navigation ul a:active, .header .navigation ul a:visited {
   color: inherit;
