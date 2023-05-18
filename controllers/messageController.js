@@ -1,7 +1,7 @@
 const Message = require('../models/message');
 
 const newMessageForm = (req, res) => {
-  res.render('newMessageForm', { user: req.user });
+  res.status(200).render('newMessageForm', { user: req.user });
 };
 
 const newMessage = async (req, res, next) => {

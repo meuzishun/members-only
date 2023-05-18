@@ -1,7 +1,9 @@
 const passport = require('passport');
 
 const signInForm = (req, res) => {
-  res.render('signInForm', { user: req.user, messages: req.session.messages }); //! This is a hack... must fix with ejs layouts
+  res
+    .status(200)
+    .render('signInForm', { user: req.user, messages: req.session.messages }); //! This is a hack... must fix with ejs layouts
 };
 
 const signInUser = [
@@ -16,7 +18,9 @@ const signInUser = [
 ];
 
 const signInFail = (req, res) => {
-  res.render('signInFail', { user: req.user, messages: req.session.messages });
+  res
+    .status(200)
+    .render('signInFail', { user: req.user, messages: req.session.messages });
 };
 
 module.exports = {

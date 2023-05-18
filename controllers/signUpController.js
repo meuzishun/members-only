@@ -4,7 +4,9 @@ const User = require('../models/user');
 
 const signUpForm = (req, res) => {
   console.log(req.session.messages);
-  res.render('signUpForm', { user: req.user, messages: req.session.messages });
+  res
+    .status(200)
+    .render('signUpForm', { user: req.user, messages: req.session.messages });
 };
 
 const signUpUser = async (req, res, next) => {
