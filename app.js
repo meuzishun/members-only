@@ -2,8 +2,7 @@ require('dotenv').config();
 const path = require('path');
 const passport = require('passport');
 require('./middleware/passport');
-const databaseConnection = require('./middleware/database');
-const mongoose = require('mongoose');
+require('./middleware/database');
 const MongoStore = require('connect-mongo');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
@@ -17,7 +16,7 @@ const app = express();
 const RateLimit = require('express-rate-limit');
 const limiter = RateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 20,
+  max: 40,
 });
 
 app.use(limiter);
