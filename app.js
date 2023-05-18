@@ -1,15 +1,14 @@
 require('dotenv').config();
+const path = require('path');
 const passport = require('passport');
 require('./middleware/passport');
-const express = require('express');
-const mongoose = require('mongoose');
 const databaseConnection = require('./middleware/database');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
+const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
-const path = require('path');
 const indexRouter = require('./routes/index');
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
-require('./middleware/passport');
 const compression = require('compression');
 const helmet = require('helmet');
 
@@ -39,11 +38,6 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use((req, res, next) => {
-//   console.log(req.session);
-//   console.log(req.user);
-//   next();
-// });
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
