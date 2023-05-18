@@ -1,4 +1,5 @@
 const passport = require('passport');
+const { body, validationResult } = require('express-validator');
 
 const signInForm = (req, res) => {
   res
@@ -7,10 +8,16 @@ const signInForm = (req, res) => {
 };
 
 const signInUser = [
+  body('email')
+    .trim()
+    .isLength({ min: 1 })
+    .escape()
+    .isEmail()
+    .withMessage('Please include a valid email.'),
   passport.authenticate('local', {
     failureRedirect: '/sign-in-fail',
     failureMessage: true,
-    successRedirect: '/new-message',
+    successRedirect: '/',
   }),
   (err, req, res, next) => {
     if (err) next(err);
